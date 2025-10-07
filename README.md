@@ -5,7 +5,7 @@ This is intended to document my journey as a rookie game developer, using proper
 
 ![Status](https://img.shields.io/badge/status-pre--alpha-orange)
 ![Engine](https://img.shields.io/badge/prototype-Python%20%2B%20Pygame-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-UPRM-green)
 ![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
 > A fast, skill-expressive side-scroller where **your gear defines your build**. No classes—mix weapons, armor, and passives to forge your own combat style.
