@@ -275,7 +275,8 @@ To nail feel & systems without heavy engine overhead; migration is an option lat
 
 **Where do I start as a contributor?**
 Check issues labeled **`good-first-issue`** or pick a scoped task from the roadmap.
-
+Also, feel free to join our Discord for feedback, suggestions, updates and more!
+Link: https://discord.gg/WEjpJ6kH
 ---
 
 ## License & Credits
@@ -288,6 +289,7 @@ Check issues labeled **`good-first-issue`** or pick a scoped task from the roadm
 ## Contact
 
 Open a GitHub **Issue** or start a **Discussion → Ideas** to propose features, report bugs, or share feedback.
+These features will also be available on our Discord Server.
 
 ---
 
