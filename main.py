@@ -3,6 +3,7 @@ from type import ItemType
 
 def main() -> None:
     test_playerHP()
+    test_inventory()
     
 def test_playerHP() -> None:
     player: Player = Player()
@@ -11,10 +12,18 @@ def test_playerHP() -> None:
     print(player.health)
     player.heal(10)
     print(player.health)
-    
-    item: Item = Item("Potion", "This is a test item.", ItemType.CONSUMABLE)
-    player.grabs_item(item)
-    print(item.is_equippable())
+def test_inventory() -> None:
+    from type import ItemType
+
+    player: Player = Player()  
+    potion: Item = Item("Health Potion", "Restores 50 HP", ItemType.CONSUMABLE)
+    sword: Item = Item("Iron Sword", "A basic iron sword", ItemType.SWORD)
+
+    player.grabs_item(sword)
+    player.grabs_item(potion)
+    player.grabs_item(potion)
+    player.inventory.display_inventory()
+
 
 if __name__ == "__main__":
     main()
