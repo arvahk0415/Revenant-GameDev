@@ -22,8 +22,11 @@ def test_inventory() -> None:
     player.grabs_item(sword)
     player.grabs_item(potion)
     player.grabs_item(potion)
+    player.grabs_item(sword)
     player.inventory.display_inventory()
+    print(player.inventory.contains(sword))
 
+    #print(player.loadout.equip_item(sword))
 
 if __name__ == "__main__":
     main()

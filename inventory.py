@@ -28,6 +28,9 @@ class Inventory:
                 self.items.append({'item': item, 'quantity': 1})
                 print(f"--Added {item.name} to inventory--")
     
+    def remove_item(self,item: Item, quantity: int):
+        
+        pass
     # TODO:
     # Removes a specific quantity of an item from the inventory
     def drop(self, item: Item, quantity: int) -> None:
@@ -37,6 +40,12 @@ class Inventory:
     #Removes the entire stack of an item
     def drop_all(self) -> None:
         pass
+
+    def contains(self,target:Item):
+        for item in self.items:
+            if item['item'].name == target.name:
+                return True
+        return False
 
     # Displays the inventory contents
     def display_inventory(self) -> None:

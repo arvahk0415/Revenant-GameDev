@@ -1,3 +1,4 @@
+
 from item import Item
 from type import ItemType
 from inventory import Inventory
@@ -15,6 +16,42 @@ class Player:
     def grabs_item(self, item:Item) -> None:
         print(f"Player grabbed {item}")
         self.inventory.add_item(item, 1)
+    def get_inventory(self):
+        return self.inventory.display_inventory()
+    
+    
+    def equip_item(self, item:Item) -> None:
+        if not self.inventory.contains(item):
+            print("No such item in inventory")
+            return
+        if not item.is_equippable():
+            print("Item is not equippable")
+            return
+        print("enter match")
+        match item.type:
+            case ItemType.HELMET:
+                self.loadout.equipped_items["helmet"] = item
+                print("helmet equipped")
+            case ItemType.CHESTPLATE:
+                self.loadout.equipped_items["chestplate"] = item
+                print("chestplate equipped")
+            case ItemType.BOOTS:
+                self.loadout.equipped_items["boots"] = item
+                print("boots equipped")
+            case ItemType.WEAPON:
+                weapon: Weapon = item
+                print("weapon enter")
+                if weapon.slot == WeaponSlot.TWO_HANDED:
+                    self.loadout.equipped_items["off_hand"] = item
+                    self.loadout.equipped_items["main_hand"] = item
+                    print("2h weapon equipped")
+                elif weapon.slot == WeaponSlot.OFF_HAND:
+                    self.loadout.equipped_items["off_hand"] = item
+                    print("off-hand weapon equipped")
+                else:
+                    self.loadout.equipped_items["main_hand"] = item
+                    print("1h weapon equipped")
+                    
     
 class Loadout:
     def __init__(self) -> None:
@@ -25,28 +62,6 @@ class Loadout:
             "chestplate": None,
             "boots": None,
         }
-    def equip_item(self, item:Item) -> None:
-        if not item.is_equippable():
-            print("Item is not equippable")
-            return
-        match item.type:
-            case ItemType.HELMET:
-                self.equipped_items["helmet"] = item
-            case ItemType.CHESTPLATE:
-                self.equipped_items["chestplate"] = item
-            case ItemType.BOOTS:
-                self.equipped_items["boots"] = item
-            case ItemType.WEAPON:
-                weapon: Weapon = item
-                if weapon.slot == WeaponSlot.TWO_HANDED:
-                    self.equipped_items["off_hand"] = item
-                    self.equipped_items["main_hand"] = item
-                elif weapon.slot == WeaponSlot.OFF_HAND:
-                    self.equipped_items["off_hand"] = item
-                else:
-                    self.equipped_items["main_hand"] = item
-                
-        pass
     
     def unequip_item(self, slot:str) -> None:
         pass
@@ -57,5 +72,8 @@ class Loadout:
 # Example usage
 player: Player = Player()
 sword: Weapon = Weapon("Iron Sword", 15, "A basic iron sword", 1.2, 1.0, 0.1, 1.5, WeaponSlot.TWO_HANDED)
-player.loadout.equip_item(sword)
+#player.loadout.equip_item(sword)
+player.grabs_item(sword)
+player.equip_item(sword)
 print(player.loadout.equipped_items)
+player.get_inventory()

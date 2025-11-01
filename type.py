@@ -6,11 +6,6 @@ class ItemType(Flag):
     CHESTPLATE = auto()
     BOOTS = auto()
     ARMOR = HELMET | CHESTPLATE | BOOTS
-    
-    #WEAPON TYPES
-    ONE_HANDED = auto()
-    TWO_HANDED = auto()
-    OFF_HAND = auto()
 
     #WEAPON SUBTYPES
     SWORD = auto()
