@@ -1,9 +1,9 @@
 from type import ItemType
 class Item:
     def __init__(self, name: str, description: str, type: ItemType) -> None:
-        self.name = name
-        self.description = description
-        self.type = type
+        self.name: str = name
+        self.description: str = description
+        self.type: ItemType = type
 
     def __str__(self) -> str:
         return f"{self.name} ({self.type.name})"

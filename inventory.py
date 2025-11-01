@@ -52,15 +52,16 @@ class Inventory:
 
 
 # Example usage
-from type import ItemType
-new = Inventory()
-potion = Item("Health Potion", "Restores 50 HP", ItemType.CONSUMABLE)
-sword = Item("Iron Sword", "A basic iron sword", ItemType.SWORD)
+def example() -> None:
+    from type import ItemType
+    new = Inventory()
+    potion = Item("Health Potion", "Restores 50 HP", ItemType.CONSUMABLE)
+    sword = Item("Iron Sword", "A basic iron sword", ItemType.SWORD)
 
-new.add_item(sword, 2)
-new.add_item(potion, 3)
-new.display_inventory()
-new.add_item(potion, 2)
-new.add_item(sword, 1)
-new.display_inventory()
+    new.add_item(sword, 2)
+    new.add_item(potion, 3)
+    new.display_inventory()
+    new.add_item(potion, 2)
+    new.add_item(sword, 1)
+    new.display_inventory()
 
